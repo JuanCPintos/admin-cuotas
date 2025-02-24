@@ -24,4 +24,5 @@ dist-ssr
 *.sw?
 
 .env
-.env.properties
+# package-lock.json should not be ignored to ensure consistent dependency management
+!package-lock.json
