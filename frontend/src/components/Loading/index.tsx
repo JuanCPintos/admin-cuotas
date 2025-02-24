@@ -1,15 +1,17 @@
 import { Spin } from "antd"
 import { LoadingOutlined } from "@ant-design/icons"
-import clsx from 'clsx'
 
-const Loading = ({ fullscreen = false }: { fullscreen?: boolean }) => {
+const Loading = ({ height, fullscreen = false }: { height: number, fullscreen?: boolean }) => {
   const indicator = <LoadingOutlined style={{ fontSize: 24 }} spin />;
   return (
     <div
-      className={clsx(
-        "flex items-center justify-center h-full",
-        fullscreen && "absolute inset-0"
-      )}
+      style={{
+        height: height ? height : fullscreen ? "100vh" : "100%",
+        width: fullscreen ? "100vw" : "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
+      }}
     >
       <Spin
         indicator={indicator}

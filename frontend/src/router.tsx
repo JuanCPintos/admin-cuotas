@@ -23,7 +23,7 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: (
-      <Suspense fallback="Loading...">
+      <Suspense fallback={<Loading fullscreen />}>
         <LoginPage />
       </Suspense>
     ),
